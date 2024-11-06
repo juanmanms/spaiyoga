@@ -1,0 +1,83 @@
+---
+---
+
+<section id="about" class="about">
+	<div class="container">
+		<h2>Sobre Nosotros</h2>
+		<div class="content">
+			<div class="text">
+				<p>En Espai Yoga Carlet, creemos en el poder transformador del yoga para mejorar la vida de las personas. Nuestro centro ofrece un espacio tranquilo y acogedor donde podrás conectar con tu cuerpo y mente.</p>
+				<p>Contamos con profesores certificados y experimentados que te guiarán en tu práctica, independientemente de tu nivel o experiencia previa.</p>
+			</div>
+			<div class="benefits">
+				<h3>Beneficios</h3>
+				<ul>
+					<li>Reduce el estrés y la ansiedad</li>
+					<li>Mejora la flexibilidad y el equilibrio</li>
+					<li>Fortalece el cuerpo y la mente</li>
+					<li>Aumenta la concentración</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</section>
+
+<style>
+	.about {
+		padding: 5rem 1rem;
+		background-color: #ffeaa7;
+	}
+
+	.container {
+		max-width: 1200px;
+		margin: 0 auto;
+	}
+
+	h2 {
+		text-align: center;
+		color: #2d3436;
+		font-size: 2.5rem;
+		margin-bottom: 3rem;
+	}
+
+	.content {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 3rem;
+	}
+
+	.text p {
+		margin-bottom: 1.5rem;
+		font-size: 1.1rem;
+	}
+
+	.benefits h3 {
+		color: #2d3436;
+		margin-bottom: 1rem;
+		font-size: 1.5rem;
+	}
+
+	.benefits ul {
+		list-style: none;
+		padding: 0;
+	}
+
+	.benefits li {
+		margin-bottom: 0.5rem;
+		padding-left: 1.5rem;
+		position: relative;
+	}
+
+	.benefits li::before {
+		content: "•";
+		color: #e17055;
+		position: absolute;
+		left: 0;
+	}
+
+	@media (max-width: 768px) {
+		.content {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>
