@@ -37,7 +37,7 @@ const Header = () => {
       </nav>
       {/* Mobile Menu */}
       {isOpen && (
-        <nav className="md:hidden py-4">
+        <nav className="md:hidden">
           <a href="/" className="block py-2 text-gray-600 hover:text-blue-600" onClick={() => setIsOpen(false)}>Inicio</a>
           <a href="#about" className="block py-2 text-gray-600 hover:text-blue-600" onClick={() => setIsOpen(false)}>Sobre Nosotros</a>
           <a href="#classes" className="block py-2 text-gray-600 hover:text-blue-600" onClick={() => setIsOpen(false)}>Clases</a>
