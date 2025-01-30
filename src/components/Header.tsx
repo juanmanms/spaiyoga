@@ -20,6 +20,13 @@ const Header = () => {
     setIsOpen(!isOpen);
   };
 
+  const links = [
+    { href: "/", label: "Inicio" },
+    { href: "#about", label: "Sobre Nosotros" },
+    { href: "#classes", label: "Clases" },
+    { href: "#contact", label: "Contacto" },
+  ];
+
   return (
     <header className="fixed w-full top-0 z-1000 bg-white bg-opacity-95 backdrop-blur-sm shadow-md scroll-margin-top-20">
       <nav className="max-w-6xl mx-auto p-4 flex justify-between items-center">
@@ -27,9 +34,13 @@ const Header = () => {
           <a href="/" className="text-xl font-bold">Espai Yoga Carlet</a>
         </div>
         <ul className="hidden md:flex gap-8 list-none">
-          <li><a href="#about" className="text-current no-underline font-medium transition-colors duration-300 hover:text-primary">Sobre Nosotros</a></li>
-          <li><a href="#classes" className="text-current no-underline font-medium transition-colors duration-300 hover:text-primary">Clases</a></li>
-          <li><a href="#contact" className="text-current no-underline font-medium transition-colors duration-300 hover:text-primary">Contacto</a></li>
+          {links.map((link) => (
+            <li key={link.href}>
+              <a href={link.href} className="text-current no-underline font-medium transition-colors duration-300 hover:text-primary">
+                {link.label}
+              </a>
+            </li>
+          ))}
         </ul>
         <button className="md:hidden" onClick={toggleMenu}>
           {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -38,10 +49,16 @@ const Header = () => {
       {/* Mobile Menu */}
       {isOpen && (
         <nav className="md:hidden">
-          <a href="/" className="block py-2 text-gray-600 hover:text-blue-600" onClick={() => setIsOpen(false)}>Inicio</a>
-          <a href="#about" className="block py-2 text-gray-600 hover:text-blue-600" onClick={() => setIsOpen(false)}>Sobre Nosotros</a>
-          <a href="#classes" className="block py-2 text-gray-600 hover:text-blue-600" onClick={() => setIsOpen(false)}>Clases</a>
-          <a href="#contact" className="block py-2 text-gray-600 hover:text-blue-600" onClick={() => setIsOpen(false)}>Contacto</a>
+          {links.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              className="block py-2 text-gray-600 hover:text-blue-600"
+              onClick={() => setIsOpen(false)}
+            >
+              {link.label}
+            </a>
+          ))}
         </nav>
       )}
     </header>
